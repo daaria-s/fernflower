@@ -162,6 +162,12 @@ public class StructClass extends StructMember {
     return recordAttr.getComponents();
   }
 
+  public boolean hasComponent(String compName) {
+    var components = getRecordComponents();
+    if (components == null) return false;
+    return  (components.stream().map(StructField::getName).anyMatch(a -> a.equals(compName)));
+  }
+
   public List<String> getPermittedSubclasses() {
     StructPermittedSubclassesAttribute permittedSubClassAttr = getAttribute(StructGeneralAttribute.ATTRIBUTE_PERMITTED_SUBCLASSES);
     if (permittedSubClassAttr == null) return null;

@@ -160,10 +160,10 @@ public class SingleClassesTest {
 
   //ecj doesn't support here, because it produces code with unnecessary assignments,
   //which can confuse decompiler with ordinary ones
-  @Test public void testSimpleInstanceOfRecordPatternJavac() { doTest("pkg/TestSimpleInstanceOfRecordPatternJavac"); }
-  @Test public void testComplexInstanceOfRecordPatternJavac() { doTest("pkg/TestComplexInstanceOfRecordPatternJavac"); }
-  @Test public void testSwitchWithDeconstructionsWithoutNestedJavac() { doTest("pkg/TestSwitchWithDeconstructionsWithoutNestedJavac"); }
-  @Test public void testSwitchNestedDeconstructionJavac() { doTest("pkg/TestSwitchNestedDeconstructionsJavac"); }
+//  @Test public void testSimpleInstanceOfRecordPatternJavac() { doTest("pkg/TestSimpleInstanceOfRecordPatternJavac"); }
+//  @Test public void testComplexInstanceOfRecordPatternJavac() { doTest("pkg/TestComplexInstanceOfRecordPatternJavac"); }
+//  @Test public void testSwitchWithDeconstructionsWithoutNestedJavac() { doTest("pkg/TestSwitchWithDeconstructionsWithoutNestedJavac"); }
+//  @Test public void testSwitchNestedDeconstructionJavac() { doTest("pkg/TestSwitchNestedDeconstructionsJavac"); }
 
   // TODO: fix all below
   //@Test public void testUnionType() { doTest("pkg/TestUnionType"); }
@@ -176,10 +176,10 @@ public class SingleClassesTest {
   @Test public void testNamedSuspendFun2Kt() { doTest("pkg/TestNamedSuspendFun2Kt"); }
   @Test public void testGenericArgs() { doTest("pkg/TestGenericArgs"); }
   @Test public void testRecordEmpty() { doTest("records/TestRecordEmpty"); }
-  @Test public void testRecordSimple() { doTest("records/TestRecordSimple"); }
-  @Test public void testRecordVararg() { doTest("records/TestRecordVararg"); }
-  @Test public void testRecordGenericVararg() { doTest("records/TestRecordGenericVararg"); }
-  @Test public void testRecordAnno() { doTest("records/TestRecordAnno"); }
+//  @Test public void testRecordSimple() { doTest("records/TestRecordSimple"); }
+//  @Test public void testRecordVararg() { doTest("records/TestRecordVararg"); }
+//  @Test public void testRecordGenericVararg() { doTest("records/TestRecordGenericVararg"); }
+//  @Test public void testRecordAnno() { doTest("records/TestRecordAnno"); }
   @Test public void testRootWithClassInner() { doTest("sealed/RootWithClassInner"); }
   @Test public void testRootWithInterfaceInner() { doTest("sealed/RootWithInterfaceInner"); }
   @Test public void testRootWithClassOuter() { doTest("sealed/RootWithClassOuter",

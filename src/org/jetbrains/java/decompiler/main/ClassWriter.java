@@ -180,6 +180,7 @@ public class ClassWriter {
 
       List<StructRecordComponent> components = cl.getRecordComponents();
 
+
       for (StructField fd : cl.getFields()) {
         boolean hide = fd.isSynthetic() && DecompilerContext.getOption(IFernflowerPreferences.REMOVE_SYNTHETIC) ||
                        wrapper.getHiddenMembers().contains(InterpreterUtil.makeUniqueKey(fd.getName(), fd.getDescriptor()));
@@ -865,6 +866,12 @@ public class ClassWriter {
               (clInit || dInit || hideConstructor(node, !typeAnnotations.isEmpty(), init, throwsExceptions, paramCount, flags)) ||
               isSyntheticRecordMethod(cl, mt, code);
 
+            if (node.classStruct.hasAttribute(StructGeneralAttribute.ATTRIBUTE_RECORD) && mt.getName().equals("<init>")) {
+              hideMethod = true;
+            }
+            else if (node.classStruct.hasComponent(mt.getName())) {
+              hideMethod = true;
+            }
             buffer.append(code);
 
             tracer.setCurrentSourceLine(codeTracer.getCurrentSourceLine());
