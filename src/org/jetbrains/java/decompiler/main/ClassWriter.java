@@ -866,12 +866,16 @@ public class ClassWriter {
               (clInit || dInit || hideConstructor(node, !typeAnnotations.isEmpty(), init, throwsExceptions, paramCount, flags)) ||
               isSyntheticRecordMethod(cl, mt, code);
 
-            if (node.classStruct.hasAttribute(StructGeneralAttribute.ATTRIBUTE_RECORD) && mt.getName().equals("<init>")) {
-              hideMethod = true;
+
+            if (DecompilerContext.getOption(IFernflowerPreferences.REMOVE_RECORD_CONSTRUCTOR_AND_GETTERS)) {
+              if (node.classStruct.hasAttribute(StructGeneralAttribute.ATTRIBUTE_RECORD) && mt.getName().equals("<init>")) {
+                hideMethod = true;
+              }
+              else if (node.classStruct.hasComponent(mt.getName())) {
+                hideMethod = true;
+              }
             }
-            else if (node.classStruct.hasComponent(mt.getName())) {
-              hideMethod = true;
-            }
+
             buffer.append(code);
 
             tracer.setCurrentSourceLine(codeTracer.getCurrentSourceLine());

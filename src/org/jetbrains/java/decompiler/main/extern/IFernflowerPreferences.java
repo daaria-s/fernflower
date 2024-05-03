@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public interface IFernflowerPreferences {
+  String REMOVE_RECORD_CONSTRUCTOR_AND_GETTERS = "rrcg";
   String REMOVE_BRIDGE = "rbr";
   String REMOVE_SYNTHETIC = "rsy";
   String DECOMPILE_INNER = "din";
@@ -55,7 +56,7 @@ public interface IFernflowerPreferences {
 
   static Map<String, Object> getDefaults() {
     Map<String, Object> defaults = new HashMap<>();
-
+    defaults.put(REMOVE_RECORD_CONSTRUCTOR_AND_GETTERS, "1");
     defaults.put(REMOVE_BRIDGE, "1");
     defaults.put(REMOVE_SYNTHETIC, "0");
     defaults.put(DECOMPILE_INNER, "1");
