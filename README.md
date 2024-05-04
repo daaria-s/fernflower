@@ -1,9 +1,11 @@
-## Test task
+# Test task
 This is a test task for the internship, where I had to change FernFlower in such a way that it doesn't generate the redundant constructor and accessors for record classes.
 ## Solution
 To do this task, I found a method *methodToJava* in class ClassWriter, and there found boolean variable *hide*. I made it true, if current class is a record and name of a current method is the same as the name of some attribute of the record or if this method is a constructor.
 So now constructor and accessors are not generating.
 Also I addded an option that can be passed through the CLI. In file IFernflowerPreferences.java I added *REMOVE_RECORD_CONSTRUCTOR_AND_GETTERS* preference.
+
+# FernFlower
 
 ### About Fernflower
 
